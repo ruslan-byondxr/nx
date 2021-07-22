@@ -31,6 +31,7 @@ export enum Preset {
   Gatsby = 'gatsby',
   Nest = 'nest',
   Express = 'express',
+  ReactNative = 'react-native',
 }
 
 export interface Schema {
@@ -263,6 +264,12 @@ const presetDependencies: Omit<
     dependencies: {},
     dev: {
       '@nrwl/gatsby': nxVersion,
+    },
+  },
+  [Preset.ReactNative]: {
+    dependencies: {},
+    dev: {
+      '@nrwl/react-native': nxVersion,
     },
   },
 };

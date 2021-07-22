@@ -15,6 +15,7 @@ export interface Schema {
     | 'angular-nest'
     | 'react-express'
     | 'nest'
-    | 'express';
+    | 'express'
+    | 'react-native';
   standaloneConfig?: boolean;
 }

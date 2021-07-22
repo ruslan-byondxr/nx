@@ -165,4 +165,19 @@ describe('preset', () => {
       '@nrwl/gatsby'
     );
   });
+
+  it('should create files (preset = react-native)', async () => {
+    await presetGenerator(tree, {
+      name: 'proj',
+      preset: 'react-native',
+      linter: 'eslint',
+      cli: 'nx',
+      standaloneConfig: false,
+    });
+
+    expect(tree.exists('/apps/proj/src/app/App.tsx')).toBe(true);
+    expect(readJson(tree, '/workspace.json').cli.defaultCollection).toBe(
+      '@nrwl/react-native'
+    );
+  });
 });
